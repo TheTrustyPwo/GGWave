@@ -102,7 +102,7 @@ messages:
 
   # The message to broadcast to everyone when a GG wave starts
   ggwave-start-broadcast:
-    - "&f&m-------- &6&lG&e&lG &6&lW&e&lA&6&lV&e&lE &6&lS&e&lT&6&lA&e&lR&6&lT&e&lE&6&lD&e&l! &f&m--------"
+    - "&f&m--------&r &6&lG&e&lG &6&lW&e&lA&6&lV&e&lE &6&lS&e&lT&6&lA&e&lR&6&lT&e&lE&6&lD&e&l! &f&m--------"
 
   # The message sent when the sender tries to start a GG wave when an existing one is already running
   ggwave-already-started:
@@ -118,4 +118,4 @@ messages:
 
   # The message to broadcast to everyone when a GG wave ends
   ggwave-end-broadcast:
-    - "&f&m-------- &6&lG&e&lG &6&lW&e&lA&6&lV&e&lE &6&lE&e&lN&6&lD&e&lE&6&lD&e&l! &f&m--------"
+    - "&f&m--------&r &6&lG&e&lG &6&lW&e&lA&6&lV&e&lE &6&lE&e&lN&6&lD&e&lE&6&lD&e&l! &f&m--------"
