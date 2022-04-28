@@ -1,5 +1,7 @@
 package com.thepwo.ggwave;
 
+import com.thepwo.ggwave.api.GGWaveAPI;
+import com.thepwo.ggwave.api.GGWaveAPIImpl;
 import com.thepwo.ggwave.commands.GGCommand;
 import com.thepwo.ggwave.listeners.ChatListener;
 import org.bukkit.Bukkit;
@@ -11,6 +13,7 @@ import java.util.stream.Collectors;
 
 public final class GGWave extends JavaPlugin {
     private static GGWave plugin;
+    private GGWaveAPI api;
     private boolean ggWaveRunning;
     private BukkitTask ggWaveTask;
 
@@ -21,6 +24,7 @@ public final class GGWave extends JavaPlugin {
         saveDefaultConfig();
         registerCommands();
         registerListeners();
+        this.api = new GGWaveAPIImpl();
         getLogger().info("GGWave Enabled!");
     }
 
@@ -39,6 +43,10 @@ public final class GGWave extends JavaPlugin {
 
     public static GGWave getPlugin() {
         return plugin;
+    }
+
+    public GGWaveAPI getApi() {
+        return api;
     }
 
     public String getMessage(String identifier) {
