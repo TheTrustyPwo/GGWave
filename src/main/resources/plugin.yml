@@ -1,0 +1,9 @@
+name: GGWave
+version: '${version}'
+main: com.thepwo.ggwave.GGWave
+api-version: 1.18
+authors: [ ThePwo ]
+description: Say GGs to the donators!
+commands:
+  ggwave:
+    description: "Main GGWave Command"

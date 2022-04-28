@@ -1,0 +1,121 @@
+gg-messages:
+  - '&a&lGG'
+  - '&b&lGG'
+  - '&c&lGG'
+  - '&d&lGG'
+  - '&e&lGG'
+  - '&f&lGG'
+  - '&1&lGG'
+  - '&2&lGG'
+  - '&3&lGG'
+  - '&4&lGG'
+  - '&5&lGG'
+  - '&6&lGG'
+  - '&7&lGG'
+  - '&8&lGG'
+  - '&9&lGG'
+  - '&a&l&oGG'
+  - '&b&l&oGG'
+  - '&c&l&oGG'
+  - '&d&l&oGG'
+  - '&e&l&oGG'
+  - '&f&l&oGG'
+  - '&1&l&oGG'
+  - '&2&l&oGG'
+  - '&3&l&oGG'
+  - '&4&l&oGG'
+  - '&5&l&oGG'
+  - '&6&l&oGG'
+  - '&7&l&oGG'
+  - '&8&l&oGG'
+  - '&9&l&oGG'
+  - '&a&l&nGG'
+  - '&b&l&nGG'
+  - '&c&l&nGG'
+  - '&d&l&nGG'
+  - '&e&l&nGG'
+  - '&f&l&nGG'
+  - '&1&l&nGG'
+  - '&2&l&nGG'
+  - '&3&l&nGG'
+  - '&4&l&nGG'
+  - '&5&l&nGG'
+  - '&6&l&nGG'
+  - '&7&l&nGG'
+  - '&8&l&nGG'
+  - '&9&l&nGG'
+  - '&a&l&k::&r &b&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &c&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &d&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &f&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &1&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &2&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &3&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &4&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &5&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &6&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &7&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &8&l&nGG&r &a&l&k::'
+  - '&a&l&k::&r &9&l&nGG&r &a&l&k::'
+  - '&8- &1&lGG&r &8-'
+  - '&8- &2&lGG&r &8-'
+  - '&8- &3&lGG&r &8-'
+  - '&8- &4&lGG&r &8-'
+  - '&8- &5&lGG&r &8-'
+  - '&8- &6&lGG&r &8-'
+  - '&8- &7&lGG&r &8-'
+  - '&8- &a&lGG&r &8-'
+  - '&8- &9&lGG&r &8-'
+
+# Message Configuration
+# They can have as many lines as you want!
+messages:
+
+  # The message sent when the sender does have not permission to do something.
+  no-permission:
+    - "&c&l(!) &cYou do not have permission to do that!"
+
+  # The message sent when the sender enters an invalid usage.
+  # Variables:
+  # - %usage% ~ The correct usage of the command
+  invalid-usage:
+    - "&c&l(!) &cUsage: %usage%"
+
+  # The message sent when the sender uses an invalid number as a command argument
+  invalid-number:
+    - "&c&l(!) &cYou entered an invalid number!"
+
+  # The message sent when the sender executes `/ggwave` without any arguments
+  # Usually a simple help menu
+  ggwave-main-message:
+    - " "
+    - "&6&lGGWave &8| &6Commands"
+    - "&6 » &e/ggwave start <duration> &8| &fStart a GG wave with the specified duration in seconds!"
+    - "&6 » &e/ggwave stop &8| &fStops the current GG wave"
+    - " "
+
+  # The message sent when the sender successfully starts a GG wave
+  # Variables:
+  # - %duration% ~ Duration of the GG wave in seconds as specified in the command
+  ggwave-started:
+    - "&6&lGGWave &8» &eYou started a GG Wave &efor &6%duration% &eseconds!"
+
+  # The message to broadcast to everyone when a GG wave starts
+  ggwave-start-broadcast:
+    - "&f&m-------- &6&lG&e&lG &6&lW&e&lA&6&lV&e&lE &6&lS&e&lT&6&lA&e&lR&6&lT&e&lE&6&lD&e&l! &f&m--------"
+
+  # The message sent when the sender tries to start a GG wave when an existing one is already running
+  ggwave-already-started:
+    - "&6&lGGWave &8» &eA GG wave is already running! Use &6/ggwave stop &eto stop it."
+
+  # The message sent when the sender successfully stops the current GG wave
+  ggwave-stopped:
+    - "&6&lGGWave &8» &eYou stopped the current GG wave!"
+
+  # The message sent when the sender tries to stop a GG wave when it isn't running
+  ggwave-already-stopped:
+    - "&6&lGGWave &8» &eThere is no GG wave running to stop."
+
+  # The message to broadcast to everyone when a GG wave ends
+  ggwave-end-broadcast:
+    - "&f&m-------- &6&lG&e&lG &6&lW&e&lA&6&lV&e&lE &6&lE&e&lN&6&lD&e&lE&6&lD&e&l! &f&m--------"
