@@ -5,12 +5,14 @@ import com.thepwo.ggwave.listeners.ChatListener;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.util.stream.Collectors;
 
 public final class GGWave extends JavaPlugin {
     private static GGWave plugin;
     private boolean ggWaveRunning;
+    private BukkitTask ggWaveTask;
 
     @Override
     public void onEnable() {
@@ -46,13 +48,23 @@ public final class GGWave extends JavaPlugin {
                 .collect(Collectors.joining("\n"));
     }
 
+    public void startGGWave(long duration) {
+        setGgWaveRunning(true);
+        this.ggWaveTask = Bukkit.getScheduler().runTaskLaterAsynchronously(this,
+                () -> setGgWaveRunning(false), duration * 20);
+    }
+
     public boolean isGgWaveRunning() {
         return ggWaveRunning;
     }
 
     public void setGgWaveRunning(boolean ggWaveRunning) {
         this.ggWaveRunning = ggWaveRunning;
-        if (ggWaveRunning) Bukkit.broadcastMessage(getMessage("ggwave-start-broadcast"));
-        else Bukkit.broadcastMessage(getMessage("ggwave-end-broadcast"));
+        if (ggWaveRunning) {
+            Bukkit.broadcastMessage(getMessage("ggwave-start-broadcast"));
+        } else {
+            Bukkit.broadcastMessage(getMessage("ggwave-end-broadcast"));
+            this.ggWaveTask.cancel();
+        }
     }
 }

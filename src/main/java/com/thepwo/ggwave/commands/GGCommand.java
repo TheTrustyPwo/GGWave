@@ -43,8 +43,13 @@ public class GGCommand implements CommandExecutor, TabCompleter {
 
                 try {
                     long duration = Long.parseLong(args[1]);
-                    this.plugin.setGgWaveRunning(true);
-                    Bukkit.getScheduler().runTaskLaterAsynchronously(this.plugin, () -> this.plugin.setGgWaveRunning(false), duration * 20);
+
+                    if (duration <= 0) {
+                        sender.sendMessage(this.plugin.getMessage("invalid-number"));
+                        return false;
+                    }
+
+                    this.plugin.startGGWave(duration);
                     sender.sendMessage(this.plugin.getMessage("ggwave-started")
                             .replace("%duration%", String.valueOf(duration)));
                 } catch (NumberFormatException e) {
